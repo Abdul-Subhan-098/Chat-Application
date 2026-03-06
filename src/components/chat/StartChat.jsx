@@ -22,12 +22,8 @@ export default function StartChat({ members = [], onClose, onStartChat }) {
             {/* Glossy Header Area */}
             <header className="h-16 border-b border-[var(--border-primary)] flex items-center px-6 justify-between bg-gradient-to-r from-[var(--bg-primary)] to-[var(--bg-secondary)]/30 shrink-0">
                 <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-white dark:bg-[var(--bg-tertiary)] shadow-lg shadow-black/5 flex items-center justify-center border border-[var(--border-primary)] overflow-hidden">
-                        <img
-                            src="/Propstar Revised Logo (1).png"
-                            alt="Logo"
-                            className="w-full h-full object-contain p-1"
-                        />
+                    <div className="w-8 h-8 rounded-lg bg-[var(--accent-primary)] text-white shadow-lg shadow-[var(--accent-primary)]/10 flex items-center justify-center">
+                        <MessageCircle size={18} strokeWidth={2.5} />
                     </div>
                     <div>
                         <h2 className="text-sm font-black text-[var(--text-primary)] tracking-tight uppercase">Start a Conversation</h2>
