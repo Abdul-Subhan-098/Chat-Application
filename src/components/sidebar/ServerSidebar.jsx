@@ -1,4 +1,4 @@
-import { LayoutDashboard, MessageSquare, Briefcase, BellRing, Settings, Plus, User, Moon, Sun } from "lucide-react";
+import { MessageSquare, Users, Megaphone, BellRing, Settings, Plus, Moon, Sun } from "lucide-react";
 
 export default function ServerSidebar({
     activeTab = "messages",
@@ -24,9 +24,9 @@ export default function ServerSidebar({
 
             {/* Navigation Icons */}
             <div className="flex flex-col gap-4 flex-1 w-full items-center">
-                <NavItem icon={<LayoutDashboard size={18} strokeWidth={2} />} label="Dashboard" active={activeTab === "dashboard"} onClick={() => onTabSelect("dashboard")} />
-                <NavItem icon={<MessageSquare size={18} strokeWidth={2} />} label="Messages" active={activeTab === "messages"} onClick={() => onTabSelect("messages")} />
-                <NavItem icon={<Briefcase size={18} strokeWidth={2} />} label="Projects" active={activeTab === "projects"} onClick={() => onTabSelect("projects")} />
+                <NavItem icon={<MessageSquare size={18} strokeWidth={2} />} label="Chats" active={activeTab === "messages"} onClick={() => onTabSelect("messages")} />
+                <NavItem icon={<Users size={18} strokeWidth={2} />} label="Groups" active={activeTab === "groups"} onClick={() => onTabSelect("groups")} />
+                <NavItem icon={<Megaphone size={18} strokeWidth={2} />} label="Broadcast Channels" active={activeTab === "broadcasts"} onClick={() => onTabSelect("broadcasts")} />
                 <NavItem icon={<BellRing size={18} strokeWidth={2} />} label="Notifications" hasIndicator={hasNotifications} active={activeTab === "notifications"} onClick={() => onTabSelect("notifications")} />
                 <NavItem icon={<Settings size={18} strokeWidth={2} />} label="Settings" active={activeTab === "settings"} onClick={() => onTabSelect("settings")} />
             </div>

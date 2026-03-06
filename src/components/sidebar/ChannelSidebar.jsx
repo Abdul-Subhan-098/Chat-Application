@@ -5,7 +5,8 @@ export default function ChannelSidebar({
     onChatSelect = () => { },
     activeChatId = null,
     onInviteClick = () => { },
-    onCreateChat = () => { }
+    onCreateChat = () => { },
+    activeTab = "messages"
 }) {
     return (
         <div className="w-[280px] flex flex-col gap-3 z-10 shrink-0">
@@ -52,7 +53,9 @@ export default function ChannelSidebar({
 
                 <div className="px-4 py-3.5 flex items-center justify-between border-b border-[var(--border-primary)] bg-[var(--bg-primary)] z-10">
                     <div className="flex items-center gap-2">
-                        <h2 className="text-[13px] font-bold text-[var(--text-primary)]">Messages</h2>
+                        <h2 className="text-[13px] font-bold text-[var(--text-primary)] capitalize">
+                            {activeTab === 'messages' ? 'Chats' : activeTab}
+                        </h2>
                         {/* Optional unread badge, could pass total unread count */}
                         {chats.some(c => c.unread > 0) && (
                             <span className="text-[var(--accent-text)] text-[10px] font-bold bg-[var(--accent-primary)] px-1.5 py-0.5 rounded">

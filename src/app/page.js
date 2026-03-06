@@ -13,6 +13,7 @@ export default function Home() {
     const [activeTab, setActiveTab] = useState("messages");
     const [activeChatId, setActiveChatId] = useState(null);
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
 
     // Sync theme with body class
     useEffect(() => {
@@ -32,6 +33,12 @@ export default function Home() {
 
     const handleSendMessage = (msg) => {
         console.log("Sending to Frappe: ", msg);
+    };
+
+    const handleHeaderAction = (action) => {
+        if (action === 'chat-details') {
+            setIsRightSidebarOpen(true);
+        }
     };
 
     return (
@@ -54,11 +61,15 @@ export default function Home() {
                 chats={chats}
                 activeChatId={activeChatId}
                 onChatSelect={setActiveChatId}
+                activeTab={activeTab}
             />
 
             {/* Main Chat Area */}
             <main className="flex-1 flex flex-col gap-3 min-w-0 z-10">
-                <ChatHeader activeChat={activeChat} />
+                <ChatHeader
+                    activeChat={activeChat}
+                    onActionClick={handleHeaderAction}
+                />
 
                 <div className="flex-1 overflow-hidden relative">
                     <MessageList
@@ -74,7 +85,11 @@ export default function Home() {
             </main>
 
             {/* Right Details Sidebar */}
-            <RightSidebar details={chatDetails} />
+            <RightSidebar
+                details={chatDetails}
+                isOpen={isRightSidebarOpen}
+                onClose={() => setIsRightSidebarOpen(false)}
+            />
         </div>
     );
 }
