@@ -1,26 +1,46 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode in Tailwind v4 */
+@variant dark (&:is(.dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Frappe Light Theme Colors */
+  --frappe-bg: #F4F5F6;
+  --frappe-surface: #FFFFFF;
+  --frappe-border: #E2E8F0;
+  --frappe-text: #1F272E;
+  --frappe-text-muted: #64748B;
+  --frappe-primary: #1778F2;
+  --frappe-primary-hover: #1461C7;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  /* Frappe Dark Theme Colors */
+  --frappe-bg: #17171C;
+  --frappe-surface: #202025;
+  --frappe-border: #333338;
+  --frappe-text: #F9FAFB;
+  --frappe-text-muted: #9CA3AF;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--frappe-bg);
+  color: var(--frappe-text);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar for Frappe elegance */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--frappe-border);
+  border-radius: 20px;
 }
