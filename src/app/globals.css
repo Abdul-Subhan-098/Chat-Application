@@ -1,37 +1,89 @@
 @import "tailwindcss";
 
+@theme {
+  /* Semantic Colors - Layout */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-inverse: var(--bg-inverse);
+
+  /* Semantic Colors - Text */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+
+  /* Semantic Colors - Borders */
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+
+  /* Accents */
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-text: var(--accent-text);
+
+  --color-danger-primary: var(--danger-primary);
+  --color-success-primary: var(--success-primary);
+}
+
 /* Enable class-based dark mode in Tailwind v4 */
 @variant dark (&:is(.dark *));
 
 :root {
-  /* Frappe Light Theme Colors */
-  --frappe-bg: #F4F5F6;
-  --frappe-surface: #FFFFFF;
-  --frappe-border: #E2E8F0;
-  --frappe-text: #1F272E;
-  --frappe-text-muted: #64748B;
-  --frappe-primary: #1778F2;
-  --frappe-primary-hover: #1461C7;
+  /* Light Theme Colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FAFAFA;
+  --bg-tertiary: #F4F4F5;
+  --bg-inverse: #000000;
+
+  --text-primary: #09090B;
+  --text-secondary: #52525B;
+  --text-muted: #A1A1AA;
+  --text-inverse: #FFFFFF;
+
+  --border-primary: #E4E4E7;
+  --border-secondary: #F4F4F5;
+
+  --accent-primary: #09090B;
+  --accent-hover: #27272A;
+  --accent-text: #FFFFFF;
+
+  --danger-primary: #EF4444;
+  --success-primary: #10B981;
 }
 
 .dark {
-  /* Frappe Dark Theme Colors */
-  --frappe-bg: #17171C;
-  --frappe-surface: #202025;
-  --frappe-border: #333338;
-  --frappe-text: #F9FAFB;
-  --frappe-text-muted: #9CA3AF;
+  /* Dark Theme Colors */
+  --bg-primary: #000000;
+  --bg-secondary: #09090B;
+  --bg-tertiary: #18181B;
+  --bg-inverse: #FFFFFF;
+
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-muted: #52525B;
+  --text-inverse: #000000;
+
+  --border-primary: #27272A;
+  --border-secondary: #18181B;
+
+  --accent-primary: #FAFAFA;
+  --accent-hover: #E4E4E7;
+  --accent-text: #09090B;
+
+  --danger-primary: #F87171;
+  --success-primary: #34D399;
 }
 
 body {
-  background-color: var(--frappe-bg);
-  color: var(--frappe-text);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   overflow: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom scrollbar for Frappe elegance */
+/* Custom scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
@@ -41,6 +93,6 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--frappe-border);
+  background-color: var(--border-primary);
   border-radius: 20px;
 }

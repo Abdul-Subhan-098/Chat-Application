@@ -9,15 +9,15 @@ export default function ServerSidebar({
     toggleTheme = () => { }
 }) {
     return (
-        <nav className="w-16 bg-[#FFFFFF] dark:bg-[#1E1E24]  rounded-[24px] flex flex-col items-center py-5 shadow-sm border border-[#E2E8F0] dark:border-[#333338] dark:border-gray-700 z-10 shrink-0">
+        <nav className="w-16 bg-[var(--bg-primary)] rounded-[24px] flex flex-col items-center py-5 shadow-sm border border-[var(--border-primary)] z-10 shrink-0">
             {/* Top Logo / App Icon */}
             <div className="mb-6 cursor-pointer opacity-90 hover:opacity-100 transition" aria-label="Home">
-                <div className="w-8 h-8 rounded-xl bg-gray-900 dark:bg-gray-100 flex justify-center items-center">
+                <div className="w-8 h-8 rounded-xl bg-[var(--text-primary)] flex justify-center items-center">
                     <div className="grid grid-cols-2 gap-[2px]">
-                        <div className="w-1.5 h-1.5 rounded-[2px] bg-white dark:bg-gray-900"></div>
-                        <div className="w-1.5 h-1.5 rounded-[2px] bg-white dark:bg-gray-900"></div>
-                        <div className="w-1.5 h-1.5 rounded-[2px] bg-white dark:bg-gray-900"></div>
-                        <div className="w-1.5 h-1.5 rounded-[2px] bg-white dark:bg-gray-900"></div>
+                        <div className="w-1.5 h-1.5 rounded-[2px] bg-[var(--bg-primary)]"></div>
+                        <div className="w-1.5 h-1.5 rounded-[2px] bg-[var(--bg-primary)]"></div>
+                        <div className="w-1.5 h-1.5 rounded-[2px] bg-[var(--bg-primary)]"></div>
+                        <div className="w-1.5 h-1.5 rounded-[2px] bg-[var(--bg-primary)]"></div>
                     </div>
                 </div>
             </div>
@@ -35,17 +35,17 @@ export default function ServerSidebar({
             <div className="mt-auto flex flex-col items-center gap-3">
                 <button
                     onClick={toggleTheme}
-                    className="w-10 h-10 rounded-xl flex items-center justify-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-all mb-2"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all mb-2"
                     aria-label="Toggle Theme"
                     title="Toggle Light/Dark Mode"
                 >
-                    {isDarkMode ? <Sun size={18} strokeWidth={2} className="text-amber-400" /> : <Moon size={18} strokeWidth={2} />}
+                    {isDarkMode ? <Sun size={18} strokeWidth={2} /> : <Moon size={18} strokeWidth={2} />}
                 </button>
-                <button className="w-8 h-8 rounded-full border border-dashed border-gray-300 dark:border-gray-600 text-gray-400 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-[#1778F2] hover:border-blue-400 transition" aria-label="Add Workspace">
+                <button className="w-8 h-8 rounded-full border border-dashed border-[var(--border-primary)] text-[var(--text-muted)] flex items-center justify-center hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)] transition" aria-label="Add Workspace">
                     <Plus size={16} />
                 </button>
-                <button className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-[#64748B] dark:text-[#9CA3AF] border border-gray-200 dark:border-gray-600 shadow-sm cursor-pointer hover:ring-2 ring-blue-500/50 transition" aria-label="User Profile">
-                    <span className="text-[11px] font-bold">{userInitials}</span>
+                <button className="w-8 h-8 rounded-full bg-[var(--bg-secondary)] flex items-center justify-center text-[var(--text-secondary)] border border-[var(--border-primary)] shadow-sm cursor-pointer hover:ring-2 ring-[var(--text-primary)]/20 transition" aria-label="User Profile">
+                    <span className="text-[11px] font-bold text-[var(--text-primary)]">{userInitials}</span>
                 </button>
             </div>
         </nav>
@@ -60,18 +60,18 @@ function NavItem({ icon, active = false, hasIndicator = false, onClick, label })
             title={label}
             className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all relative group
       ${active
-                    ? "bg-[#EBF4FF] dark:bg-blue-900/40 text-[#1778F2] dark:text-blue-400 shadow-sm"
-                    : "text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                    ? "bg-[var(--accent-primary)] text-[var(--accent-text)] shadow-sm"
+                    : "text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"
                 }
     `}>
             {/* Active Indicator Bar */}
             {active && (
-                <div className="absolute -right-[12px] w-1 h-5 bg-[#EBF4FF]0 rounded-l-full"></div>
+                <div className="absolute -right-[12px] w-1 h-5 bg-[var(--accent-primary)] rounded-l-full"></div>
             )}
 
             {/* Notification Dot */}
             {hasIndicator && (
-                <div className="absolute top-2.5 right-2.5 w-1.5 h-1.5 bg-red-500 rounded-full border border-[#FFFFFF] dark:border-[#1E1E24]"></div>
+                <div className="absolute top-2.5 right-2.5 w-1.5 h-1.5 bg-[var(--danger-primary)] rounded-full border border-[var(--bg-primary)]"></div>
             )}
 
             {icon}

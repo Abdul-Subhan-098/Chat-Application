@@ -35,7 +35,7 @@ export default function Home() {
     };
 
     return (
-        <div className="flex h-screen w-full bg-[#F4F5F6] dark:bg-[#17171C] p-3 gap-3 overflow-hidden relative font-sans">
+        <div className="flex h-screen w-full bg-[var(--bg-tertiary)] p-3 gap-3 overflow-hidden relative font-sans text-[var(--text-primary)]">
 
             {/* Background ambient accents for depth */}
 
