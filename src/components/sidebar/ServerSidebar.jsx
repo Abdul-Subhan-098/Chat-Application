@@ -10,15 +10,14 @@ export default function ServerSidebar({
 }) {
     return (
         <nav className="w-16 bg-[var(--bg-primary)] rounded-[24px] flex flex-col items-center py-5 shadow-sm border border-[var(--border-primary)] z-10 shrink-0">
-            {/* Top Logo / App Icon */}
-            <div className="mb-6 cursor-pointer opacity-90 hover:opacity-100 transition" aria-label="Home">
-                <div className="w-8 h-8 rounded-xl bg-[var(--text-primary)] flex justify-center items-center">
-                    <div className="grid grid-cols-2 gap-[2px]">
-                        <div className="w-1.5 h-1.5 rounded-[2px] bg-[var(--bg-primary)]"></div>
-                        <div className="w-1.5 h-1.5 rounded-[2px] bg-[var(--bg-primary)]"></div>
-                        <div className="w-1.5 h-1.5 rounded-[2px] bg-[var(--bg-primary)]"></div>
-                        <div className="w-1.5 h-1.5 rounded-[2px] bg-[var(--bg-primary)]"></div>
-                    </div>
+            {/* Top Logo / Brand Icon */}
+            <div className="mb-6 cursor-pointer transform hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Home">
+                <div className="w-10 h-10 rounded-xl bg-white dark:bg-[var(--bg-secondary)] flex justify-center items-center shadow-md shadow-black/5 border border-[var(--border-primary)] overflow-hidden">
+                    <img
+                        src="/Propstar Revised Logo (1).png"
+                        alt="Propstar Logo"
+                        className="w-full h-full object-contain p-1"
+                    />
                 </div>
             </div>
 
